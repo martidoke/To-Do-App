@@ -19,7 +19,7 @@ function onReady() {
 
       deleteBtn.addEventListener('click', event => {
         toDos = toDos.filter(function(item){
-          return item.id |== toDo.id;
+          return item.id !== toDo.id;
         })
 
         renderTheUI();
@@ -29,7 +29,7 @@ function onReady() {
 
       toDoList.appendChild(newLi);
       newLi.appendChild(checkbox);
-      newLi. appendChild(deleteBtn);
+      newLi.appendChild(deleteBtn);
      })
    }
 
@@ -56,12 +56,10 @@ function onReady() {
  addToDoForm.addEventListener('submit', event => {
    event.preventDefault();
    createNewToDo();
+   console.log(toDos);
  });
 
  renderTheUI();
-}
-
-
 
  window.onload = function() {
    onReady();
